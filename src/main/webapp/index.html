@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Start Page</title>
+        <title>Galeria interactiva</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            .galeria img {
+                width: 250px; /* mida petita */
+                height: auto;
+                margin: 10px;
+                cursor: pointer; /* Indica que es pot fer clic */
+                transition: transfom 0.3s ease; /* transició suau per a l'efecte */
+                border: 1px solid #ccc;
+            }
+            /* Estil que s'aplicarà quan es faci clic (classe afegida per JavaScript) */
+            .galeria .imatge-activa {
+                transform: scale(1.5); /* Engrandeix la imatge (zoom) */
+                z-index: 10; /* Col·loca la imatge sobre altres elements */
+                position: absolute; /* Posició absoluta per evitar que mogui altres elements */
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Ombra per destacar */
+            }
+
+            .imatge-item {
+                display: inline-block;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        </style>
     </head>
     <body>
         <h1>Raul Lorca</h1>
-        <h2>Correcció des de Github</h2>
+        <h1>Galeria interactiva</h1>
+        <div class="galeria">
+            <figure class="imatge-item">
+                <img src="img/foto1.jpg" alt="Muntanya de Montserrat" onclick="engrandirImatge(this)">
+                <figcaption>Vista panoràmica de la muntanya de Montserrat</figcaption>
+            </figure>
+            <figure class="imatge-item">
+                <img src="img/foto2.jpg" alt="Entrada principal santuari de Montserrat" onclick="engrandirImatge(this)">
+                <figcaption>Entrada principal de l'esglesia</figcaption>
+            </figure>
+        </div>
+        <script src="galeria.js"></script>
     </body>
 </html>
